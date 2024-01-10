@@ -53,7 +53,7 @@
     * When you are logged in to an EWS Linux terminal, it does not matter if you are sitting at a particular computer or connecting remotely; all of your personal files will remain the same
 
 ### How to use Linux?
-- You will need to login to EWS Linux machines either physically, or [remotely](#working-remotely)
+- You will need to login to EWS Linux machines either physically, or [remotely](#working-remotely) before you move forward with the following sections. We recommend using FastX if you are connecting remotely to the EWS machines.
 
 ### Command Line Interface
 - Knowing how to use the CLI is very important
