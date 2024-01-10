@@ -95,6 +95,8 @@
 - Arguments are what the command is operating on, some flags may require its own argument
 
 ### Common/useful commands
+Note that the examples below are only meant to show you how the command is structured.  
+Actually running these command in the terminal will result in some error as some files don't exist.
 #### ls
 - Function: **l**i**s**ts files at a given directory
 - Important flags:
@@ -105,7 +107,7 @@
     * If no argument was given, path is assumed to be current working directory
 - Example:
     * `ls` if you just want to view files in current working directory
-    * `ls -la ~/ece120`
+    * `ls -la ~/example_directory`
 
 #### cd
 - Function: **c**hange **d**irectory
@@ -114,7 +116,7 @@
 - Arguments:
     * Path to the directory we want to `cd` into
 - Example:
-    * `cd ~/ece120` gets you into the `ece120` directory
+    * `cd ~/example_directory` changes your working directory to `~/example_directory`
 
 #### pwd
 - Function: **p**rint **w**orking **d**irectory
@@ -130,7 +132,7 @@
 - Arguments:
     * Path to directory we want to create
 - Example:
-    * `mkdir ~/ece120/new_folder` makes a new directory in the `ece120` directory called `new_folder`
+    * `mkdir ~/example_directory/new_folder` makes a new directory in the `example_directory` directory called `new_folder`
 
 #### touch
 - Function: creates a file
@@ -139,7 +141,7 @@
 - Arguments:
     * Path to the file we want to `touch`
 - Example:
-    * `touch ~/ece120/new_folder/new_file` makes a new file in the `new_folder` directory called `new_file` 
+    * `touch ~/example_directory/new_folder/new_file` makes a new file in the `new_folder` directory called `new_file` 
 
 #### mv
 - Function: **m**o**v**e (cut)
@@ -149,7 +151,7 @@
     * Source file/directory
     * Destination file/directory
 - Example:
-    * `mv ~/Downloads/downloaded_file ~/ece120/new_folder` moves the `downloaded_file` into `new_folder`
+    * `mv ~/Downloads/downloaded_file ~/example_directory/new_folder` moves the `downloaded_file` into `new_folder`
     * Note that the source is a file and the destination is a folder, this means the file will be moved into the folder
     * `mv ~/Downloads/downloaded_file ~/Downloads/renamed_file`
     * When the source is a file but the destination is not a directory, the file will be renamed to the name of the destination
@@ -162,7 +164,7 @@
     * Source file/directory
     * Destination file/directory
 - Example:
-    * `cp ~/Downloads/downloaded_file ~/ece120/new_folder` copies the `downloaded_file` into `new_folder`
+    * `cp ~/Downloads/downloaded_file ~/example_directory/new_folder` copies the `downloaded_file` into `new_folder`
 
 #### rm
 - Function: **r**e**m**ove
@@ -171,7 +173,7 @@
 - Arguments:
     * Path to location we want to remove
 - Example:
-    * `rm ~/ece120/new_folder/downloaded_file`
+    * `rm ~/example_directory/new_folder/downloaded_file`
 
 #### cat
 - Function: con**cat**enate (Prints out file content)
