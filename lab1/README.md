@@ -1,4 +1,4 @@
-# Lab 1
+# Lab 1 (UNDER CONSTRUCTION)
 ## Table of Content
 * [Overview](#overview)
 * [Introduction to Linux](#introduction-to-linux)
