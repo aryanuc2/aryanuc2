@@ -1,4 +1,4 @@
-# Lab 1 (UNDER CONSTRUCTION)
+# Lab 1
 ## Table of Content
 * [Overview](#overview)
 * [Introduction to Linux](#introduction-to-linux)
@@ -221,7 +221,7 @@ Host github.com
     IdentitiesOnly Yes
 ```
 7. Change the permission via `chmod 600 ~/.ssh/config` and `chmod 700 ~/.ssh/config`
-8. Head to [github.com](github.com), Navigate to your profile on the top right corner ->Setting->SSH and GPG Keys (under "Access" on the left column)
+8. Head to [github.com](github.com)->Setting->SSH and GPG Keys
 9. Add the new SSH key, name it something like EWS
 10. Leave the key type as-is
 11. Run `cat ~/.ssh/github.pub` and copy paste the printout into the box on github.com
@@ -289,13 +289,13 @@ Git thinks of its data more like a series of snapshots of a miniature filesystem
 [Connecting to EWS Linux with FastX](https://answers.uillinois.edu/illinois.engineering/page.php?id=81727)
 
 #### Option 2: SSH (All OS except for ChromeOS)
-- SSH stands for Secure Shell which does not give you access to Graphics User Interface, or GUI, refer to option 2.5 for GUI with SSH
-`ssh [your netid]@linux.ews.illinois.edu` in your terminal
+- SSH stands for Secure Shell which does not give you access to Graphics User Interface, or GUI, refer to option 2.5 for GUI with SSH  
+- `ssh [your netid]@linux.ews.illinois.edu` in your terminal
 
 #### Option 2.5: SSH with X-forwarding (All OS except for ChromeOS) 
-***Linux*** - `ssh -X [your netid]@linux.ews.illinois.edu`
-***Windows*** - You will need to install puTTy and XMing, and enable the X11 forwarding option in puTTY
-***macOS*** - You will need to install XQuartz
+***Linux*** - `ssh -X [your netid]@linux.ews.illinois.edu`  
+***Windows*** - You will need to install puTTy and XMing, and enable the X11 forwarding option in puTTY  
+***macOS*** - You will need to install XQuartz  
 
 [^1]: Technically it's a kernel, a part of an operating system, but that's beyond the scope of this course
 
