@@ -73,11 +73,11 @@
     * Your current working directory can be referred to as `.` and the root is `/`
     * You may also use `~` mentioned above to refer to your home, which will be the place of all your work in ECE 120
 - Examples:
+    * The download folder
+        * `/home/netid/Downloads`
     * A file we downloaded
-        * `/home/netid/Downloads/downloaded_file`
-    * The lab folder
-        * `~/ece120/lab1`
-        * Notice how we used `~` to replace the long text
+        * `~/Downloads/downloaded_file`
+        * Notice how we used `~` to replace the long text (home)
 - To get a visualization of the file structure, try running `tree ~ -L 3` in the terminal
     * `-L` specifies the depth, i.e. how many layers to go into
 
@@ -88,6 +88,7 @@
     * We want to access `file2` in `folder5`
         * We can do `../file2`
         * Notice the `..` refers to the parent of the current working directory
+        * You can also chain `..` together, i.e. `../../file3`
 
 ### Command Structure
 - Commands generally look like `command [flags] [arguments]`
@@ -95,8 +96,18 @@
 - Arguments are what the command is operating on, some flags may require its own argument
 
 ### Common/useful commands
-Note that the examples below are only meant to show you how the command is structured.  
-Actually running these command in the terminal will result in some error as some files don't exist.
+Make sure you have a terminal pulled up for the "Try it out" part
+#### pwd
+- Function: **p**rint **w**orking **d**irectory
+- Important flags:
+    * None
+- Arguments:
+    * None
+- Try it out:
+    * `pwd`
+        * You should see something like `/home/your_netid` printed out
+        * If you see something else, open a new terminal and use that
+
 #### ls
 - Function: **l**i**s**ts files at a given directory
 - Important flags:
@@ -105,25 +116,9 @@ Actually running these command in the terminal will result in some error as some
 - Argument:
     * Path to the directory we want to `ls`
     * If no argument was given, path is assumed to be current working directory
-- Example:
-    * `ls` if you just want to view files in current working directory
-    * `ls -la ~/example_directory`
-
-#### cd
-- Function: **c**hange **d**irectory
-- Important flags:
-    * None
-- Arguments:
-    * Path to the directory we want to `cd` into
-- Example:
-    * `cd ~/example_directory` changes your working directory to `~/example_directory`
-
-#### pwd
-- Function: **p**rint **w**orking **d**irectory
-- Important flags:
-    * None
-- Arguments:
-    * None
+- Try it out:
+    * `ls -la ~`
+        * This will display all the files in your home `~` directory
 
 #### mkdir 
 - Function: **m**a**k**e (create) **dir**ectory
@@ -131,8 +126,24 @@ Actually running these command in the terminal will result in some error as some
     * `-p` creates parent directory if doesn't exist
 - Arguments:
     * Path to directory we want to create
-- Example:
-    * `mkdir ~/example_directory/new_folder` makes a new directory in the `example_directory` directory called `new_folder`
+- Try it out:
+    * `mkdir ./120_try_it_out`
+        * This will create a directory called `120_try_it_out` in `.` (which is also `~`)
+
+#### cd
+- Function: **c**hange **d**irectory
+- Important flags:
+    * None
+- Arguments:
+    * Path to the directory we want to `cd` into
+- Try it out:
+    * `cd ./120_try_it_out`
+        * This will change your working directory to `./120_try_it_out`, the one we just created
+
+`tree` output
+```
+.
+```
 
 #### touch
 - Function: creates a file
@@ -140,8 +151,15 @@ Actually running these command in the terminal will result in some error as some
     * None
 - Arguments:
     * Path to the file we want to `touch`
-- Example:
-    * `touch ~/example_directory/new_folder/new_file` makes a new file in the `new_folder` directory called `new_file` 
+- Try it out:
+    * `touch cool_file`
+        * This will create a file named `cool_file`
+
+`tree` output
+```
+.
+└── cool_file
+```
 
 #### mv
 - Function: **m**o**v**e (cut)
@@ -150,11 +168,18 @@ Actually running these command in the terminal will result in some error as some
 - Arguments:
     * Source file/directory
     * Destination file/directory
-- Example:
-    * `mv ~/Downloads/downloaded_file ~/example_directory/new_folder` moves the `downloaded_file` into `new_folder`
-    * Note that the source is a file and the destination is a folder, this means the file will be moved into the folder
-    * `mv ~/Downloads/downloaded_file ~/Downloads/renamed_file`
-    * When the source is a file but the destination is not a directory, the file will be renamed to the name of the destination
+- Try it out:
+    * Before trying this command, let's create two more directories `dir_1` and `dir_2` in `~/120_try_it_out`
+    * `mv ./cool_file ./dir_1`
+        * This will move the file `cool_file` into `dir_1`, retaining its original name (since we did not specify one)
+
+`tree` output
+```
+.
+├── dir_1
+│    └── cool_file
+└── dir_2
+```
 
 #### cp
 - Function: **c**o**p**y
@@ -163,8 +188,17 @@ Actually running these command in the terminal will result in some error as some
 - Arguments:
     * Source file/directory
     * Destination file/directory
-- Example:
-    * `cp ~/Downloads/downloaded_file ~/example_directory/new_folder` copies the `downloaded_file` into `new_folder`
+- Try it out:
+    * `cp ./dir_1/cool_file ./dir_2/uncool_file`
+        * This will copy the file `./dir_1/cool_file` into `./dir_2` with the new name `uncool_file`
+`tree` output
+```
+.
+├── dir_1
+│    └── cool_file
+└── dir_2
+     └── uncool_file
+```
 
 #### rm
 - Function: **r**e**m**ove
@@ -172,8 +206,36 @@ Actually running these command in the terminal will result in some error as some
     * `-r` recursively, for directory and all its children
 - Arguments:
     * Path to location we want to remove
-- Example:
-    * `rm ~/example_directory/new_folder/downloaded_file`
+- Try it out:
+    * `rm ./dir_2/uncool_file` (1)
+    * `rm -r ./dir_2` (2)
+
+`tree` output (1)
+```
+.
+├── dir_1
+│    └── cool_file
+└── dir_2
+```
+`tree` output (2)
+```
+.
+└── dir_1
+     └── cool_file
+```
+
+### echo
+- Function: Display text
+- Important flags:
+    * None
+- Arguments:
+    * Text to display
+- Try it out:
+    * `echo "Hello!"`
+        * You should see the text "Hello!" being "echoed" back to you on the terminal
+    * `echo "Goodbye!" > ./dir_1/cool_file`
+        * Instead of printing the text on the terminal, we redirect it using `>` to overwrite it into the file `./dir_1/cool_file`
+        * If you want to append instead of overwrite, use `>>`
 
 #### cat
 - Function: con**cat**enate (Prints out file content)
@@ -181,8 +243,11 @@ Actually running these command in the terminal will result in some error as some
     * None
 - Arguments:
     * Path to file we want to print
-- Example:
-    * `cat ~/Downloads/downloaded_file` will print the content of `downloaded_file` onto the terminal
+- Try it out:
+    * `cat ./dir_1/cool_file`
+        * You should see "Goodbye!", the same string we just `echo` into the file
+
+Just to clean things up, let's go back to the home folder and remove the `120_try_it_out` directory we made for these commands.
 
 ### Text Editing
 There are plenty of CLI text editors, feel free to try them around and use the one you are comfortable with:  
@@ -241,8 +306,7 @@ Host github.com
 
 ### Before every lab
 1. `git fetch release` to fetch any update to the release repo
-2. `git merge release/lab_branch_name -m "Merging lab_branch_name" --allow-unrelated-histories` to merge the update your just fetched
-    * `lab_branch_name` is just `lab1` for this lab
+2. `git merge release/main -m "Merging release" --allow-unrelated-histories` to merge the update your just fetched
 
 ## The actual assignment
 ### Part 1. Linux Commands
