@@ -148,7 +148,7 @@ Record the result for each of these computation in `lab2.txt`.
 
 ### 2. Loops
 #### Overview
-You will modify [sqrt.c](./src/sqrt.c) to use a `while` loop instead of the `for` loop.
+You will modify [lab2.c](./src/lab2.c) to use a `while` loop instead of the `for` loop.
 
 When attempting to compile, you will likely encounter `undefined reference to sqrt`. This is due to `math.h` not being part of standard C library and must be linked statically. You can simply add the `-lm` flag during compilation
 
