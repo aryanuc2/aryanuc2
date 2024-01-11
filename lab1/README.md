@@ -278,6 +278,7 @@ Here is a [video tutorial](https://mediaspace.illinois.edu/media/t/1_w5wq0eyv) f
 5. When you check the `~/.ssh` directory, you should see two files we care about: `github` and `github.pub`
     * DO NOT share `github` with anyone, only `github.pub`
 6. Create a config: `~/.ssh/config` with the following content:
+   (Need help? watch the [video tutorial](https://mediaspace.illinois.edu/media/t/1_w5wq0eyv))
 ```
 Host github.com
     HostName github.com
