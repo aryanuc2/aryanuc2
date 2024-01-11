@@ -1,10 +1,4 @@
 # Introduction to C programming
-## Pull
-```
-git fetch release
-git merge release/lab2 -m "Merging lab2" --allow-unrelated-histories
-```
-
 ## Overview
 The purpose of this lab is to introduce the following basics of the C programming language:
 1. Program structure
