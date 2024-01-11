@@ -286,7 +286,7 @@ Host github.com
     IdentitiesOnly Yes
 ```
 7. Change the permission via `chmod 600 ~/.ssh/config` and `chmod 700 ~/.ssh/config`
-8. Head to [github.com](github.com)->Setting->SSH and GPG Keys
+8. Head to github.com, Navigate to your profile at the top right corner ->Setting->SSH and GPG Keys (under "Access" on the left column)
 9. Add the new SSH key, name it something like EWS
 10. Leave the key type as-is
 11. Run `cat ~/.ssh/github.pub` and copy paste the printout into the box on github.com
