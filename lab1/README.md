@@ -307,7 +307,7 @@ Host github.com
 
 ### Before every lab
 1. `git fetch release` to fetch any update to the release repo
-2. `git merge release/main -m "Merging release" --allow-unrelated-histories` to merge the update your just fetched
+2. `git merge release/main -m "Merging release" --allow-unrelated-histories` to merge the update you just fetched
 
 ## The actual assignment
 ### Part 1. Linux Commands
